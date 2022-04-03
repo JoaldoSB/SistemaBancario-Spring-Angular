@@ -12,15 +12,14 @@ export class ClientesComponent implements OnInit {
   clientes: any[] = [];
 
   ngOnInit(): void {
+    this.listarTodos();
   }
 
   listarTodos(){
-    this.clienteService.listaTodosClientes().subscribe((result: any) => {
+    this.clienteService.listarTodosClientes().subscribe((result: any) => {
       this.clientes = result;
       console.log(this.clientes);
-    }
-
-    );
+    });
   }
 
 }

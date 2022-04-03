@@ -10,7 +10,7 @@ export class ClientesService {
   endpoint = 'clientes';
   constructor(private http: HttpClient) { }
 
-  listaTodosClientes(){
-    return this.http.get(`${this.api}/${this.endpoint}`);
+  listarTodosClientes(){
+    return this.http.get(`${this.api}/${this.endpoint}/`);
   }
 }

@@ -5,15 +5,17 @@ import { ContasComponent } from './pages/contas/contas.component';
 
 const routes: Routes = [
   {
-    path: 'clientes', component: ClientesComponent
+    path: 'clientes',
+    component: ClientesComponent
   },
   {
-    path: 'contas', component: ContasComponent
+    path: 'contas',
+    component: ContasComponent
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }
