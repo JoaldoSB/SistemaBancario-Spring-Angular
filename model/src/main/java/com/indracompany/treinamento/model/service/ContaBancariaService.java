@@ -31,7 +31,7 @@ public class ContaBancariaService extends GenericCrudService<ContaBancaria, Long
 		return c.getSaldo();
 	}
 
-	public ContaBancaria consultarConta (String agencia, String numeroConta) {
+	public ContaBancaria consultarConta(String agencia, String numeroConta) {
 		ContaBancaria c = repository.findByAgenciaAndNumero(agencia, numeroConta);
 		
 		if (c == null) {
@@ -73,7 +73,7 @@ public class ContaBancariaService extends GenericCrudService<ContaBancaria, Long
 		}
 	}
 	
-	public void sacar(String nomeContaDestino, String agencia, String numeroConta, double valor, String tipoOperacao) {
+	public void sacar(String nomeContaDestino, String agencia, String numeroConta, double valor, String operacaoTipo) {
 		ContaBancaria conta = this.consultarConta(agencia, numeroConta);
 		
 		if (conta.getSaldo()<valor) {
@@ -82,9 +82,9 @@ public class ContaBancariaService extends GenericCrudService<ContaBancaria, Long
 		
 		conta.setSaldo(conta.getSaldo() - valor);
 		super.salvar(conta);
-		if(tipoOperacao.equals("SACAR")) {
+		if(operacaoTipo.equals("SACAR")) {
 			operacaoContaService.salvarOperacao(conta, valor, "Saque efetuado com sucesso!");
-		} else if (tipoOperacao.equals("TRANSFERIR")) {
+		} else if (operacaoTipo.equals("TRANSFERIR")) {
 			operacaoContaService.salvarOperacao(conta, valor, "Transferencia enviada para" 
 				+" Ag.:"+conta.getAgencia()
 				+" Conta: "+conta.getNumero() 

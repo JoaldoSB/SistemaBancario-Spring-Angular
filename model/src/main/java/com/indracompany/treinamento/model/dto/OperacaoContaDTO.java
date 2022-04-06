@@ -9,8 +9,8 @@ import lombok.Data;
 
 @Data
 public class OperacaoContaDTO implements Serializable{
-	
-	private static final long serialVersionUID = 1L;
+		
+	private static final long serialVersionUID = -919726974156353996L;
 	
 	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm:ss")
 	private LocalDateTime dataHora;
