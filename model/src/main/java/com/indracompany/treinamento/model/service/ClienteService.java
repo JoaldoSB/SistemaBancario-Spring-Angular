@@ -45,9 +45,9 @@ public class ClienteService extends GenericCrudService<Cliente, Long, ClienteRep
 
 		Cliente cliente = repository.findByCpf(cpf);
 
-		if (cliente == null) {
+		/*if (cliente == null) {
 			throw new AplicacaoException(ExceptionValidacoes.ALERTA_NENHUM_REGISTRO_ENCONTRADO);
-		}
+		}*/
 
 		return cliente;
 	}
