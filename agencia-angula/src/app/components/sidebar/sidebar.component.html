@@ -1,1 +1,45 @@
-<p>sidebar works!</p>
+<p></p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="http://localhost:4200/home">
+      <i class="fas fa-university"></i> | página inicial
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-targe="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-targe="#navbarNavDarkDropdown2" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="btn-group">
+      <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        cliente
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="http://localhost:4200/clientes">Lista de Clientes</a></li>
+        <li><a class="dropdown-item" href="http://localhost:4200/clientes/cadastrar">Cadastrar Clientes</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        conta
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="http://localhost:4200/contas">Lista de contas</a></li>
+        <li><a class="dropdown-item" href="http://localhost:4200/contas/cadastrar">Cadastrar Conta</a></li>
+      </ul>
+    </div>
+    <div class="saque">
+      <a class="btn btn-success" [routerLink]="['saque']"><i class="fa-solid fa-hand-holding-dollar"></i> | Saque</a>
+    </div>
+    <div class="deposito">
+      <a class="btn btn-success" [routerLink]="['deposito']"><i class="fas fa-coins"></i> | Depósito</a>
+    </div>
+    <div class="transferencia">
+      <a class="btn btn-success" [routerLink]="['transferencia']"><i class="fas fa-comments-dollar"></i> | Transfêrencia</a>
+    </div>
+    <div class="extrato">
+      <a class="btn btn-success" [routerLink]="['extrato']"><i class="fa-solid fa-receipt"></i> | Extrato</a>
+    </div>
+  </div>
+</nav>
+

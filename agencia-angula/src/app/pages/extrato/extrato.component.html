@@ -1,0 +1,55 @@
+<div class="container">
+  <form class="form-inline my-2 my-lg-0">
+    <div class="row">
+      <div class="col">
+        <br>
+        <h4> <i class="fa-solid fa-receipt text-success"></i> | Extrato bancário</h4>
+        <hr>
+        <div class="col-4">
+          <br>
+          <input class="form-control mr-sm-2" type="search" [(ngModel)]="agencia" [ngModelOptions]="{standalone: true}" placeholder="Agencia">
+        </div>
+        <div class="col-4">
+          <br>
+          <input class="form-control mr-sm-2" type="search" [(ngModel)]="conta" [ngModelOptions]="{standalone: true}" placeholder="Conta">
+        </div>
+        <div class="col-4">
+          <br>
+          <input class="form-control mr-sm-2" type="search" [(ngModel)]="dataInicio" [ngModelOptions]="{standalone: true}" placeholder="Data Inicial">
+        </div>
+        <div class="col-4">
+          <br>
+          <input class="form-control mr-sm-2" type="search" [(ngModel)]="dataFinal" [ngModelOptions]="{standalone: true}" placeholder="Data Final">
+        </div>
+        <div class="col-4">
+          <br>
+        <button class="btn btn-primary mx-1" (click)="OpExtrair()" type="submit"><i class="fas fa-search"></i> Buscar</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <br>
+  <div class="row">
+    <div class="col">
+      <table class="table table-dark table-striped">
+        <thead>
+          <tr class="table table-striped">
+            <th scope="col">ID</th>
+            <th scope="col"><i class="fas fa-stopwatch"></i> Data | Hora</th>
+            <th scope="col"><i class="fa-solid fa-calculator"></i>
+            Tipo da Operaçao</th>
+            <th scope="col"><i class="fas fa-coins"></i> Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let extrato of extrato">
+            <th>{{extrato.id}}</th>
+            <td>{{extrato.dataHora  | date:'dd/MM/yyyy | HH:mm:ss' }}</td>
+            <td>{{extrato.operacaoTipo}}</td>
+            <td>{{extrato.valor | currency: 'BRL'}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+
+

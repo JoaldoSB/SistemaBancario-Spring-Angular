@@ -11,6 +11,15 @@ import { ClientesCadastrarEditarComponent } from './pages/clientes/clientes-cada
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SaqueComponent } from './pages/saque/saque.component';
+import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
+import { ExtratoComponent } from './pages/extrato/extrato.component';
+import { DepositoComponent } from './pages/deposito/deposito.component';
+import { ContasCadastrarEditarComponent } from './pages/contas/contas-cadastrar-editar/contas-cadastrar-editar.component';
+import { TesteComponent } from './pages/contas/teste/teste.component';
+import { LoaderComponent } from './components/loader/loader.component';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +29,15 @@ import { FooterComponent } from './components/footer/footer.component';
     ContasComponent,
     ClientesCadastrarEditarComponent,
     SidebarComponent,
-    FooterComponent
+    FooterComponent,
+    SaqueComponent,
+    TransferenciaComponent,
+    ExtratoComponent,
+    DepositoComponent,
+    ContasCadastrarEditarComponent,
+    TesteComponent,
+    LoaderComponent,
+    HomeComponent
     ],
   imports: [
     BrowserModule,
@@ -28,6 +45,7 @@ import { FooterComponent } from './components/footer/footer.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

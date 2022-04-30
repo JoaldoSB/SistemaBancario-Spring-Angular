@@ -35,7 +35,7 @@ export class ClientesComponent implements OnInit {
       if (result.isConfirmed) {
         this.clienteService.remover(id).subscribe(result => {
           Swal.fire({
-            title: 'Parabéns!',
+            title: 'Operação Finalizada!',
             text: "Cliente removido com sucesso",
             icon: 'success',
           });

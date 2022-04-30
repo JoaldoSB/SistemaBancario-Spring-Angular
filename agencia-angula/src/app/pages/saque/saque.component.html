@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <br>
+      <h4><i class="fa-solid fa-hand-holding-dollar text-success"></i> | Saque</h4>
+      <hr>
+      <form [formGroup]="formSaque" (ngSubmit)="sacar()">
+        <div class="mb-3">
+          <label for="agencia" class="form-label">Agencia</label>
+          <input type="text" class="form-control" id="agencia" formControlName="agencia">
+        </div>
+        <div class="mb-3">
+          <label for="numero" class="form-label">Conta</label>
+          <input type="text" class="form-control" id="numero" formControlName="numeroConta">
+        </div>
+        <div class="mb-3">
+          <label for="valor" class="form-label">Valor</label>
+          <input type="text" class="form-control" id="valor" formControlName="valor">
+        </div>
+        <button [disabled]="!formSaque.valid" type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+  </div>
+</div>

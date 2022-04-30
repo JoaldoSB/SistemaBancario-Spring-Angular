@@ -31,4 +31,8 @@ export class ClientesService {
     return this.http.get<ICliente>(`${this.api}/${this.endpoint}/${id}`);
   }
 
+  buscarPorCPF(cpf: string) {
+    return this.http.get<ICliente>(`${this.api}/${this.endpoint}/buscarPorCpf/${cpf}`);
+  }
+
 }

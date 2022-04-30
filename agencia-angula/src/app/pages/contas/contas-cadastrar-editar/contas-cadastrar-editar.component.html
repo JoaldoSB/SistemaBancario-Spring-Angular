@@ -1,0 +1,25 @@
+<p>Cadastrar contas</p>
+
+<form [formGroup]="formConta" (ngSubmit)="enviar()">
+  <div class="mb-3">
+    <label for="nome" class="form-label">Cliente</label>
+    <select *ngIf="!clientePorCPF" class="form-select" formControlName="idCliente">
+      <option value="null" hidden>Selecione o cliente</option>
+      <option *ngFor="let cliente of clientes" [value]="cliente.id">{{ cliente.nome }}</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="agencia" class="form-label">Agencia</label>
+    <input type="text" class="form-control" id="agencia" formControlName="agencia">
+  </div>
+  <div class="mb-3">
+    <label for="numero" class="form-label">Conta</label>
+    <input type="text" class="form-control" id="numero" formControlName="numero">
+  </div>
+  <div class="mb-3">
+    <label for="saldo" class="form-label">Saldo</label>
+    <input type="text" class="form-control" id="saldo" formControlName="saldo">
+  </div>
+  <button [disabled]="!formConta.valid" type="submit" class="btn btn-primary">Enviar</button>
+</form>
+

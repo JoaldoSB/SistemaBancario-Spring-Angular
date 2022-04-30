@@ -1,4 +1,3 @@
-<p>MEUS CLIENTES</p>
 <table class="table table-dark table-striped">
   <thead>
     <tr class="table table-striped">
@@ -8,6 +7,7 @@
       <th scope="col">Saldo</th>
       <th scope="col">Cliente</th>
       <th scope="col">Email</th>
+      <th>Ações</th>
     </tr>
   </thead>
   <tbody>
@@ -18,6 +18,17 @@
       <td>{{conta.saldo}}</td>
       <td>{{conta.cliente.nome}}</td>
       <td>{{conta.cliente.email}}</td>
+      <td>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Ações
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" [routerLink]="['editar', conta.id]">Alterar Conta</a></li>
+            <li><a class="dropdown-item" (click)="confirmar(conta.id)">Encerrar Conta</a></li>
+          </ul>
+        </div>
+      </td>
     </tr>
   </tbody>
 </table>
